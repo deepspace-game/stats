@@ -17,6 +17,7 @@
   var shipLevel4 = "";
   var shipLevel5 = "";
   var totalShips = "";
+  var shipsLost = "";
 	var shipspecstats = "";
 	var shipstats100 = "";
 	var shipstats1 = "";
@@ -51,6 +52,9 @@
       
   		totalShips = tokenData["total_ships_minted"];
 		  document.getElementById('totalShips').innerHTML = "Total Ship Mints: " + largeFormat(totalShips);
+			
+  		shipsLost = tokenData["ships_lost"];
+		  document.getElementById('shipsLost').innerHTML = "Ships Lost: " + largeFormat(shipsLost);
 			
  		shipSpecsCounts = tokenData["ship_spec_stat_counts"];
 		shipwith100stat = shipSpecsCounts["ships_with_100_stat"];
@@ -338,6 +342,7 @@ Mint/Buy/Sell/Trade Ships on the DEEPSPACE App at: <a href="https://app.deepspac
 <br><div id="shipLevel4">Ship Rating 4 Mints: N/A</div>
 <br><div id="shipLevel5">Ship Rating 5 Mints: N/A</div>
 <br><div id="totalShips">Total Ship Mints: N/A</div>
+<br><div id="shipsLost">Ships Lost: N/A</div>
 <br><div id="shipSpecs100">Ships with at least one stat as 100: N/A</div>
 <br><div id="shipSpecs1">Ships with at least one stat as 1: N/A</div>
 <br><div id="topMintersList">Top Minters List: - N/A</div>
