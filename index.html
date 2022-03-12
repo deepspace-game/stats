@@ -24,6 +24,7 @@
 	var totalPlayers = "";
 	var topMintersList = "";
 	var topShipsList = "";
+	var stakingPoolsList = "";
 	
 	largeFormat = d3.format(",.0f");
 	largeFormatDecimal = d3.format(",.2f");
@@ -313,6 +314,173 @@ row.appendChild(cell);
   // sets the border attribute of tbl to 2;
   tbl.setAttribute("border", "2");
 			
+
+
+////////////////////
+			
+		  stakingPools = tokenData["staking_pools"];
+		  document.getElementById('stakingPools').innerHTML = "Staking Pools:<br>";
+
+
+  // creates a <table> element and a <tbody> element
+  tbl = document.createElement("table");
+  tblBody = document.createElement("tbody");
+  
+    row = document.createElement("tr");
+    cell = document.createElement("td");
+    cellText = document.createTextNode("Pool Number:");
+      cell.appendChild(cellText);
+row.appendChild(cell);
+			
+	cell = document.createElement("td");
+      cellText = document.createTextNode("Min Stars:");
+      cell.appendChild(cellText);
+row.appendChild(cell);
+			
+    cell = document.createElement("td");    
+	cellText = document.createTextNode("Max Stars:");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+		      
+    cell = document.createElement("td");    
+	cellText = document.createTextNode("Loss Chance:");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			
+    cell = document.createElement("td");    
+	cellText = document.createTextNode("Luck Factor:");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			
+    cell = document.createElement("td");    
+	cellText = document.createTextNode("Entry Fee:");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			
+    cell = document.createElement("td");    
+	cellText = document.createTextNode("Exit Fee:");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			
+    cell = document.createElement("td");    
+	cellText = document.createTextNode("Number of Ships:");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+	  
+    cell = document.createElement("td");    
+	cellText = document.createTextNode("Allocation Points:");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			
+    cell = document.createElement("td");    
+	cellText = document.createTextNode("Deposit Enabled:");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+						
+    // add the row to the end of the table body
+    tblBody.appendChild(row);
+  
+  var y = 0;
+		  for (let i = 0; i < stakingPools.length; i++) {
+		  y++;
+		  	poolId = stakingPools[i]["pool_id"];
+		  	poolMinStars = stakingPools[i]["pool_min_stars"];
+			poolMaxStars = stakingPools[i]["pool_max_stars"];
+		 	shipClass = stakingPools[i]["pool_loss_chance"];
+			statsTotal = stakingPools[i]["pool_entry_fee"];
+			shipAttack = stakingPools[i]["pool_exit_fee"]["attack"];
+			shipSpecialAttack = stakingPools[i]["pool_num_ships"];
+			shipShields = stakingPools[i]["pool_alloc_point"];
+			shipSpecialDefense = stakingPools[i]["pool_deposit_enabled"];
+			 			
+    // creates a table row
+    row = document.createElement("tr");
+    cell = document.createElement("td");
+    cellText = document.createTextNode(y);
+      cell.appendChild(cellText);
+row.appendChild(cell);
+			  
+    cell = document.createElement("td");
+	 cellText = document.createTextNode(shipId);
+      cell.appendChild(cellText);
+row.appendChild(cell);
+			  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(ownerId);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(shipClass);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			  
+			  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(level);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(statsTotal);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(shipAttack);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(shipShields);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+		  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(shipSpeed);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+	  
+
+    cell = document.createElement("td");
+      cellText = document.createTextNode(shipMining);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+	  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(shipLuck);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+	  
+			  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(shipSpecialAttack);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+	  
+			  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(shipSpecialDefense);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+	  
+			  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(shipMaxHealth);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+	  
+			  
+    // add the row to the end of the table body
+    tblBody.appendChild(row);
+    }
+		
+  // put the <tbody> in the <table>
+  tbl.appendChild(tblBody);
+  // appends <table> into <body>
+  document.getElementById('topShipsList').appendChild(tbl);
+  // sets the border attribute of tbl to 2;
+  tbl.setAttribute("border", "2");
 			
 		  lastUpdated = tokenData["last_updated"];
 		  document.getElementById('lastUpdated').innerHTML = "Last Updated: " + lastUpdated;
