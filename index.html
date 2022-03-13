@@ -385,9 +385,10 @@ row.appendChild(cell);
 		  	poolMinStars = stakingPools[i]["pool_min_stars"];
 			poolMaxStars = stakingPools[i]["pool_max_stars"];
 		 	poolLossChance = stakingPools[i]["pool_loss_chance"];
+			poolLuckFactor = stakingPools[i]["pool_luck_factor"];
 			poolEntryFee = stakingPools[i]["pool_entry_fee"];
 			poolExitFee = stakingPools[i]["pool_exit_fee"];
-			poolNumShips = stakingPools[i]["pool_num_ships"];
+			poolNumShips = largeFormat(stakingPools[i]["pool_num_ships"]);
 			poolAllocPoint = stakingPools[i]["pool_alloc_point"];
 			poolDepositEnabled = stakingPools[i]["pool_deposit_enabled"];
 			 			
@@ -412,6 +413,11 @@ row.appendChild(cell);
 			  
     cell = document.createElement("td");
       cellText = document.createTextNode(poolLossChance);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(poolLuckFactor);
       cell.appendChild(cellText);
       row.appendChild(cell);
 			  
