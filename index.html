@@ -380,9 +380,7 @@ row.appendChild(cell);
     // add the row to the end of the table body
     tblBody.appendChild(row);
   
-  var y = 0;
 		  for (let i = 0; i < stakingPools.length; i++) {
-		  y++;
 		  	poolId = stakingPools[i]["pool_id"];
 		  	poolMinStars = stakingPools[i]["pool_min_stars"];
 			poolMaxStars = stakingPools[i]["pool_max_stars"];
@@ -395,10 +393,6 @@ row.appendChild(cell);
 			 			
     // creates a table row
     row = document.createElement("tr");
-    cell = document.createElement("td");
-    cellText = document.createTextNode(y);
-      cell.appendChild(cellText);
-row.appendChild(cell);
 			  
     cell = document.createElement("td");
 	 cellText = document.createTextNode(poolId);
