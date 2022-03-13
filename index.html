@@ -384,7 +384,7 @@ row.appendChild(cell);
 		  	poolId = stakingPools[i]["pool_id"];
 		  	poolMinStars = stakingPools[i]["pool_min_stars"];
 			poolMaxStars = stakingPools[i]["pool_max_stars"];
-		 	poolLossChance = largeFormatPercentage(stakingPools[i]["pool_loss_chance"]);
+		 	poolLossChance = largeFormat(stakingPools[i]["pool_loss_chance"]) + "%";
 			poolLuckFactor = stakingPools[i]["pool_luck_factor"];
 			poolEntryFee = stakingPools[i]["pool_entry_fee"] + " DPS";
 			poolExitFee = stakingPools[i]["pool_exit_fee"] + " DPS";
