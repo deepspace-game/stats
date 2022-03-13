@@ -25,6 +25,7 @@
 	var topMintersList = "";
 	var topShipsList = "";
 	var stakingPools = "";
+	var totalShipsStaked = "";
 	
 	largeFormat = d3.format(",.0f");
 	largeFormatDecimal = d3.format(",.2f");
@@ -56,6 +57,9 @@
 			
   		shipsLost = tokenData["ships_lost"];
 		  document.getElementById('shipsLost').innerHTML = "Ships Lost: " + largeFormat(shipsLost);
+			
+  		totalShipsStaked = tokenData["total_ships_staked"];
+		  document.getElementById('totalShipsStaked').innerHTML = "Total Ships Staked: " + largeFormat(totalShipsStaked);
 			
  		shipSpecsCounts = tokenData["ship_spec_stat_counts"];
 		shipwith100stat = shipSpecsCounts["ships_with_100_stat"];
@@ -482,6 +486,7 @@ Mint/Buy/Sell/Trade Ships on the DEEPSPACE App at: <a href="https://app.deepspac
 <br/>
 <br><div id="totalShips">Total Ships Built: N/A</div>
 <br><div id="shipsLost">Ships Lost: N/A</div>
+<br><div id="totalShipsStaked">Total Ships Staked: N/A</div>
 <br><div id="shipLevel1">Ship Rating 1 Mints: N/A</div>
 <br><div id="shipLevel2">Ship Rating 2 Mints: N/A</div>
 <br><div id="shipLevel3">Ship Rating 3 Mints: N/A</div>
