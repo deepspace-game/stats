@@ -52,7 +52,7 @@
 		  document.getElementById('shipLevel5').innerHTML = "Ship Rating 5 Mints: " + largeFormat(shipLevel5);
       
   		totalShips = tokenData["total_ships_minted"];
-		  document.getElementById('totalShips').innerHTML = "Total Ship Built: " + largeFormat(totalShips);
+		  document.getElementById('totalShips').innerHTML = "Total Ships Built: " + largeFormat(totalShips);
 			
   		shipsLost = tokenData["ships_lost"];
 		  document.getElementById('shipsLost').innerHTML = "Ships Lost: " + largeFormat(shipsLost);
@@ -386,12 +386,12 @@ row.appendChild(cell);
 		  	poolId = stakingPools[i]["pool_id"];
 		  	poolMinStars = stakingPools[i]["pool_min_stars"];
 			poolMaxStars = stakingPools[i]["pool_max_stars"];
-		 	shipClass = stakingPools[i]["pool_loss_chance"];
-			statsTotal = stakingPools[i]["pool_entry_fee"];
-			shipAttack = stakingPools[i]["pool_exit_fee"]["attack"];
-			shipSpecialAttack = stakingPools[i]["pool_num_ships"];
-			shipShields = stakingPools[i]["pool_alloc_point"];
-			shipSpecialDefense = stakingPools[i]["pool_deposit_enabled"];
+		 	poolLossChance = stakingPools[i]["pool_loss_chance"];
+			poolEntryFee = stakingPools[i]["pool_entry_fee"];
+			poolExitFee = stakingPools[i]["pool_exit_fee"];
+			poolNumShips = stakingPools[i]["pool_num_ships"];
+			poolAllocPoint = stakingPools[i]["pool_alloc_point"];
+			poolDepositEnabled = stakingPools[i]["pool_deposit_enabled"];
 			 			
     // creates a table row
     row = document.createElement("tr");
@@ -401,75 +401,51 @@ row.appendChild(cell);
 row.appendChild(cell);
 			  
     cell = document.createElement("td");
-	 cellText = document.createTextNode(shipId);
+	 cellText = document.createTextNode(poolId);
       cell.appendChild(cellText);
 row.appendChild(cell);
 			  
     cell = document.createElement("td");
-      cellText = document.createTextNode(ownerId);
+      cellText = document.createTextNode(poolMinStars);
       cell.appendChild(cellText);
       row.appendChild(cell);
 			  
     cell = document.createElement("td");
-      cellText = document.createTextNode(shipClass);
+      cellText = document.createTextNode(poolMaxStars);
       cell.appendChild(cellText);
       row.appendChild(cell);
 			  
 			  
     cell = document.createElement("td");
-      cellText = document.createTextNode(level);
+      cellText = document.createTextNode(poolLossChance);
       cell.appendChild(cellText);
       row.appendChild(cell);
 			  
     cell = document.createElement("td");
-      cellText = document.createTextNode(statsTotal);
+      cellText = document.createTextNode(poolEntryFee);
       cell.appendChild(cellText);
       row.appendChild(cell);
 			  
     cell = document.createElement("td");
-      cellText = document.createTextNode(shipAttack);
+      cellText = document.createTextNode(poolExitFee);
       cell.appendChild(cellText);
       row.appendChild(cell);
 			  
     cell = document.createElement("td");
-      cellText = document.createTextNode(shipShields);
+      cellText = document.createTextNode(poolNumShips);
       cell.appendChild(cellText);
       row.appendChild(cell);
 		  
     cell = document.createElement("td");
-      cellText = document.createTextNode(shipSpeed);
+      cellText = document.createTextNode(poolAllocPoint);
       cell.appendChild(cellText);
       row.appendChild(cell);
 	  
 
     cell = document.createElement("td");
-      cellText = document.createTextNode(shipMining);
+      cellText = document.createTextNode(poolDepositEnabled);
       cell.appendChild(cellText);
-      row.appendChild(cell);
-	  
-    cell = document.createElement("td");
-      cellText = document.createTextNode(shipLuck);
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-	  
-			  
-    cell = document.createElement("td");
-      cellText = document.createTextNode(shipSpecialAttack);
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-	  
-			  
-    cell = document.createElement("td");
-      cellText = document.createTextNode(shipSpecialDefense);
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-	  
-			  
-    cell = document.createElement("td");
-      cellText = document.createTextNode(shipMaxHealth);
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-	  
+      row.appendChild(cell);  
 			  
     // add the row to the end of the table body
     tblBody.appendChild(row);
@@ -504,13 +480,13 @@ Mint/Buy/Sell/Trade Ships on the DEEPSPACE App at: <a href="https://app.deepspac
 <p><i>Tip: Check the console log for the full JSON response from the token stat server</i></p>
 <p>Pro Tip: DEEPSPACE (DPS) Ships NFTs API Endpoint: <a href="https://api.deepspace.game/stats">https://api.deepspace.game/stats</a></p>
 <br/>
+<br><div id="totalShips">Total Ships Built: N/A</div>
+<br><div id="shipsLost">Ships Lost: N/A</div>
 <br><div id="shipLevel1">Ship Rating 1 Mints: N/A</div>
 <br><div id="shipLevel2">Ship Rating 2 Mints: N/A</div>
 <br><div id="shipLevel3">Ship Rating 3 Mints: N/A</div>
 <br><div id="shipLevel4">Ship Rating 4 Mints: N/A</div>
 <br><div id="shipLevel5">Ship Rating 5 Mints: N/A</div>
-<br><div id="totalShips">Total Ship Built: N/A</div>
-<br><div id="shipsLost">Ships Lost: N/A</div>
 <br><div id="shipSpecs100">Ships with at least one stat as 100: N/A</div>
 <br><div id="shipSpecs1">Ships with at least one stat as 1: N/A</div>
 <br><div id="topMintersList">Top Minters List: - N/A</div>
