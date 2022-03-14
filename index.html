@@ -3,6 +3,12 @@
 <title>DEEPSPACE (DPS) Ship NFT Stats Client</title>
 <meta http-equiv="Pragma" content="no-cache">
 <base target="_blank">
+<style>
+table, th, td {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+</style>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script>
 	let xhr = new XMLHttpRequest();
@@ -404,7 +410,7 @@ Mint/Buy/Sell/Trade Ships on the DEEPSPACE App at: <a href="https://app.deepspac
 <br><div id="stakingPools">Staking Pools: - N/A</div>
 <br><div id="topMintersList">Top Minters List: - N/A</div>
 <br><div id="topShipsListTitle">Top Ships List: - N/A</div>
-<table id="topShipsList" style="border: 2px solid black;"></table>
+<table id="topShipsList"></table>
 <br><div id="lastUpdated">Last Updated: N/A</div>
 </body>
 </html>
