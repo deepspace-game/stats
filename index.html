@@ -20,8 +20,6 @@
   var shipsLost = "";
 	var shipspecstats = "";
 	var shipstats100 = "";
-	var shipstats91 = "";
-	var shipstats90 = "";
 	var shipstats1 = "";
 	var totalPlayers = "";
 	var topMintersList = "";
@@ -69,12 +67,8 @@
 			
  		shipSpecsCounts = tokenData["ship_spec_stat_counts"];
 		shipwith100stat = shipSpecsCounts["ships_with_100_stat"];
-		shipwith91stat = shipSpecsCounts["ships_with_91_stat"];
-		shipwith90stat = shipSpecsCounts["ships_with_90_stat"];
 		shipwith1stat = shipSpecsCounts["ships_with_1_stat"];
 		 document.getElementById('shipSpecs100').innerHTML = "Ships with at least one stat as 100: " + largeFormat(shipwith100stat);
-document.getElementById('shipSpecs91').innerHTML = "Ships with at least one stat as 91: " + largeFormat(shipwith91stat);
-			document.getElementById('shipSpecs90').innerHTML = "Ships with at least one stat as 90: " + largeFormat(shipwith90stat);
 		document.getElementById('shipSpecs1').innerHTML = "Ships with at least one stat as 1: " + largeFormat(shipwith1stat);
 			
 		  topMintersList = tokenData["top_minters"];
