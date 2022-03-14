@@ -220,6 +220,7 @@ row.appendChild(cell);
 		  for (let i = 0; i < topShipsList.length; i++) {
 		  y++;
 		  	shipId = topShipsList[i]["ship_id"];
+			shipIdOnly = shipId.split('-')[1]
 		  	ownerId = topShipsList[i]["ship_owner_id"];
 			level = topShipsList[i]["ship_rating"];
 		 	shipClass = topShipsList[i]["ship_class"];
@@ -241,7 +242,7 @@ row.appendChild(cell);
 row.appendChild(cell);
 			  
     cell = document.createElement("td");
-	 cellText = document.createTextNode(shipId);
+	 cellText = document.createTextNode(shipIdOnly);
       cell.appendChild(cellText);
 row.appendChild(cell);
 			  
