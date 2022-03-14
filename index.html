@@ -135,87 +135,42 @@ row.appendChild(cell);
 		
 			
 		  topShipsList = tokenData["top_ships"];
-		  document.getElementById('topShipsList').innerHTML = "Top " + topShipsList.length +  " Ships:<br>";
+		  document.getElementById('topShipsListTitle').innerHTML = "Top " + topShipsList.length +  " Ships:<br>";
 
+var table = document.getElementById("topShipsList");
 
-  // creates a <table> element and a <tbody> element
-  tbl = document.createElement("table");
-  tblBody = document.createElement("tbody");
-  
-    row = document.createElement("tr");
-    cell = document.createElement("td");
-    cellText = document.createTextNode("Position:");
-      cell.appendChild(cellText);
-row.appendChild(cell);
-			
-	cell = document.createElement("td");
-      cellText = document.createTextNode("Ship Address:");
-      cell.appendChild(cellText);
-row.appendChild(cell);
-			
-    cell = document.createElement("td");    
-	cellText = document.createTextNode("Owner Address:");
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-		      
-    cell = document.createElement("td");    
-	cellText = document.createTextNode("Ship Class:");
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-			
-    cell = document.createElement("td");    
-	cellText = document.createTextNode("Ship Rating:");
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-			
-    cell = document.createElement("td");    
-	cellText = document.createTextNode("Ship Total Stats:");
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-			
-    cell = document.createElement("td");    
-	cellText = document.createTextNode("Attack:");
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-			
-    cell = document.createElement("td");    
-	cellText = document.createTextNode("Shields:");
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-	  
-    cell = document.createElement("td");    
-	cellText = document.createTextNode("Speed:");
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-			
-    cell = document.createElement("td");    
-	cellText = document.createTextNode("Mining:");
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-			
-    cell = document.createElement("td");    
-	cellText = document.createTextNode("Luck:");
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-			
-    cell = document.createElement("td");    
-	cellText = document.createTextNode("Special Attack:");
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-			
-    cell = document.createElement("td");    
-	cellText = document.createTextNode("Special Defense:");
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-			
-    cell = document.createElement("td");    
-	cellText = document.createTextNode("Max Health:");
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-						
-    // add the row to the end of the table body
-    tblBody.appendChild(row);
-  
+var rowH = table.insertRow();
+
+var cellH1 = rowH.insertCell();  
+var cellH2 = rowH.insertCell();
+var cellH3 = rowH.insertCell();
+var cellH4 = rowH.insertCell();
+var cellH5 = rowH.insertCell();
+var cellH6 = rowH.insertCell();
+var cellH7 = rowH.insertCell();
+var cellH8 = rowH.insertCell();
+var cellH9 = rowH.insertCell();
+var cellH10 = rowH.insertCell();
+var cellH11 = rowH.insertCell();
+var cellH12 = rowH.insertCell();
+var cellH13 = rowH.insertCell();
+var cellH14 = rowH.insertCell();
+ 
+cellH1.innerHTML = "Position:";
+cellH2.innerHTML = "Ship Address:";
+cellH3.innerHTML = "Owner Address:";
+cellH4.innerHTML = "Ship Class:";
+cellH5.innerHTML = "Ship Rating:";
+cellH6.innerHTML = "Ship Total Stats:";
+cellH7.innerHTML = "Attack:";
+cellH8.innerHTML = "Shields:";
+cellH9.innerHTML = "Speed:";
+cellH10.innerHTML = "Mining:";
+cellH11.innerHTML = "Luck:";
+cellH12.innerHTML = "Special Attack:";
+cellH13.innerHTML = "Special Defense:";
+cellH14.innerHTML = "Max Health:";  
+		
   var y = 0;
 		  for (let i = 0; i < topShipsList.length; i++) {
 		  y++;
@@ -233,9 +188,6 @@ row.appendChild(cell);
 			shipMining = topShipsList[i]["ship_stats"]["mining"];
 			shipLuck = topShipsList[i]["ship_stats"]["luck"];
 			shipMaxHealth = topShipsList[i]["ship_stats"]["max_health"];
-
-
-var table = document.getElementById("topShipsList");
 
 var row = table.insertRow();
 
@@ -256,7 +208,7 @@ var cell14 = row.insertCell();
 
 
 cell1.innerHTML = y;
-cell2.innerHTML = shipIdOnly;
+cell2.innerHTML = "<a href=\"https://app.deepspace.game/shipLink/" + shipIdOnly + "\">" + shipIdOnly + "</a>";
 cell3.innerHTML = ownerId;
 cell4.innerHTML = shipClass;
 cell5.innerHTML = level;
@@ -268,10 +220,10 @@ cell10.innerHTML = shipMining;
 cell11.innerHTML = shipLuck;
 cell12.innerHTML = shipSpecialAttack;
 cell13.innerHTML = shipSpecialDefense;
-cell14.innerHTML = shipMaxHealth;			  
+cell14.innerHTML = shipMaxHealth;  
 	
-//cell.innerHTML("<a href=\"https://app.deepspace.game/shipLink/" + shipIdOnly + "\">" + shipIdOnly + "</a>");		
 
+			  
 }
 
 ////////////////////
@@ -451,7 +403,8 @@ Mint/Buy/Sell/Trade Ships on the DEEPSPACE App at: <a href="https://app.deepspac
 <br><div id="shipSpecs1">Ships with at least one stat as 1: N/A</div>
 <br><div id="stakingPools">Staking Pools: - N/A</div>
 <br><div id="topMintersList">Top Minters List: - N/A</div>
-<br><table id="topShipsList"></table>
+<br><div id="topShipsListTitle">Top Ships List: - N/A</div>
+<table id="topShipsList" style="border: 2px solid black;"></table>
 <br><div id="lastUpdated">Last Updated: N/A</div>
 </body>
 </html>
