@@ -247,6 +247,105 @@ cell15.innerHTML = shipMaxHealth;
 
 ////////////////////
 			
+		  topShipsBurnedList = tokenData["top_ships_burned"];
+		  document.getElementById('topShipsBurnedListTitle').innerHTML = "Top " + topShipsBurnedList.length +  " Ships Burned:<br>";
+
+var table = document.getElementById("topShipsBurnedList");
+
+var rowH = table.insertRow();
+
+var cellH1 = rowH.insertCell();  
+var cellH2 = rowH.insertCell();
+var cellH3 = rowH.insertCell();
+var cellH4 = rowH.insertCell();
+var cellH5 = rowH.insertCell();
+var cellH6 = rowH.insertCell();
+var cellH7 = rowH.insertCell();
+var cellH8 = rowH.insertCell();
+var cellH9 = rowH.insertCell();
+var cellH10 = rowH.insertCell();
+var cellH11 = rowH.insertCell();
+var cellH12 = rowH.insertCell();
+var cellH13 = rowH.insertCell();
+var cellH14 = rowH.insertCell();
+ 
+cellH1.innerHTML = "Position:";
+cellH2.innerHTML = "Ship Address:";
+cellH3.innerHTML = "Ship Class:";
+cellH4.innerHTML = "Ship Rating:";
+cellH5.innerHTML = "Ship Total Stats:";
+cellH6.innerHTML = "Texture Rarity:";
+cellH7.innerHTML = "Attack:";
+cellH8.innerHTML = "Shields:";
+cellH9.innerHTML = "Speed:";
+cellH10.innerHTML = "Mining:";
+cellH11.innerHTML = "Luck:";
+cellH12.innerHTML = "Special Attack:";
+cellH13.innerHTML = "Special Defense:";
+cellH14.innerHTML = "Max Health:";  
+		
+  var y = 0;
+		  for (let i = 0; i < topShipsBurnedList.length; i++) {
+		  y++;
+		  	shipId = topShipsBurnedList[i]["ship_id"];
+			shipIdOnly = shipId.split('-')[1]
+			shipRating = topShipsBurnedList[i]["ship_rating"];
+			shipTextureType = topShipsBurnedList[i]["ship_texture_type"];
+		 	shipClass = topShipsBurnedList[i]["ship_class"];
+			statsTotal = topShipsBurnedList[i]["ship_stats_total"];
+			shipAttack = topShipsBurnedList[i]["ship_stats"]["attack"];
+			shipSpecialAttack = topShipsBurnedList[i]["ship_stats"]["special_attack"];
+			shipShields = topShipsBurnedList[i]["ship_stats"]["shields"];
+			shipSpecialDefense = topShipsBurnedList[i]["ship_stats"]["special_defense"];
+			shipSpeed = topShipsBurnedList[i]["ship_stats"]["speed"];
+			shipMining = topShipsBurnedList[i]["ship_stats"]["mining"];
+			shipLuck = topShipsBurnedList[i]["ship_stats"]["luck"];
+			shipMaxHealth = topShipsBurnedList[i]["ship_stats"]["max_health"];
+
+    shipRatingBuild = "";
+    for (let index = 0; index < shipRating; index++) {
+      shipRatingBuild = shipRatingBuild + "⭐"
+    }
+			  
+var row = table.insertRow();
+
+var cell1 = row.insertCell();  
+var cell2 = row.insertCell();
+var cell3 = row.insertCell();
+var cell4 = row.insertCell();
+var cell5 = row.insertCell();
+var cell6 = row.insertCell();
+var cell7 = row.insertCell();
+var cell8 = row.insertCell();
+var cell9 = row.insertCell();
+var cell10 = row.insertCell();
+var cell11 = row.insertCell();
+var cell12 = row.insertCell();
+var cell13 = row.insertCell();
+var cell14 = row.insertCell();
+
+cell1.innerHTML = y;
+cell2.innerHTML = "<a href=\"https://app.deepspace.game/shipLink/" + shipIdOnly + "\">" + shipIdOnly + "</a>";
+cell3.innerHTML = shipClass;
+cell4.innerHTML = shipRatingBuild;
+cell5.innerHTML = statsTotal;
+cell6.innerHTML = shipTextureType;
+cell7.innerHTML = shipAttack;
+cell8.innerHTML = shipShields;
+cell9.innerHTML = shipSpeed;
+cell10.innerHTML = shipMining;
+cell11.innerHTML = shipLuck;
+cell12.innerHTML = shipSpecialAttack;
+cell13.innerHTML = shipSpecialDefense;
+cell14.innerHTML = shipMaxHealth;  
+	
+
+			  
+}
+			
+///
+			
+			
 		  stakingPools = tokenData["staking_pools"];
 		  document.getElementById('stakingPools').innerHTML = "Staking Pools:<br>";
 
@@ -657,6 +756,8 @@ Mint/Buy/Sell/Trade Ships on the DEEPSPACE App at: <a href="https://app.deepspac
 <br><div id="topMintersList">Top Minters List: - N/A</div>
 <br><div id="topShipsListTitle">Top Ships List: - N/A</div>
 <table id="topShipsList"></table>
+<br><div id="topShipsBurnedListTitle">Top Ships Burned List: - N/A</div>
+<table id="topShipsBurnedList"></table>
 <br><div id="topPurchasesTitle">Top Purchase List: - N/A</div>
 <table id="topPurchases"></table>
 <br><div id="recentPurchasesTitle">Recent Purchase List: - N/A</div>
