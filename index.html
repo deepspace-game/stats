@@ -400,6 +400,116 @@ row.appendChild(cell);
 		  lastUpdated = tokenData["last_updated"];
 		  document.getElementById('lastUpdated').innerHTML = "Last Updated: " + lastUpdated;
 		
+////
+
+		  topPurchases = tokenData["top_purchases"];
+		  document.getElementById('topPurchasesTitle').innerHTML = "" + topPurchases.length +  " Top Purchased Ships:<br>";
+
+var table = document.getElementById("topPurchases");
+
+var rowH = table.insertRow();
+
+var cellH1 = rowH.insertCell();  
+var cellH2 = rowH.insertCell();
+var cellH3 = rowH.insertCell();
+var cellH4 = rowH.insertCell();
+var cellH5 = rowH.insertCell();
+var cellH6 = rowH.insertCell();
+var cellH7 = rowH.insertCell();
+var cellH8 = rowH.insertCell();
+var cellH9 = rowH.insertCell();
+var cellH10 = rowH.insertCell();
+var cellH11 = rowH.insertCell();
+var cellH12 = rowH.insertCell();
+var cellH13 = rowH.insertCell();
+var cellH14 = rowH.insertCell();			
+ 
+cellH1.innerHTML = "Date:";
+cellH2.innerHTML = "Ship Id:";
+cellH3.innerHTML = "Rating:";
+cellH4.innerHTML = "Level:";
+cellH5.innerHTML = "Price:";
+cellH6.innerHTML = "Texture Rarity:";
+cellH7.innerHTML = "Attack:";
+cellH8.innerHTML = "Special Attack:";
+cellH9.innerHTML = "Shields:";
+cellH10.innerHTML = "Special Defense:";
+cellH11.innerHTML = "Speed:";
+cellH12.innerHTML = "Luck:";
+cellH13.innerHTML = "Mining:";
+cellH14.innerHTML = "Max Health:";
+		
+		  for (let i = 0; i < topPurchases.length; i++) {
+		  	purchaseId = topPurchases[i]["purchase_id"];
+		  	purchaseBuyer = topPurchases[i]["buyer"];
+			purchaseSeller = topPurchases[i]["seller"];
+		 	purchaseFee = largeFormat(topPurchases[i]["fee"]) + " DPS";
+			purchasePrice = largeFormat(topPurchases[i]["price"]) + " DPS";
+			purchaseTokenAddress = topPurchases[i]["token_address"];
+			purchaseTokenId = topPurchases[i]["token_id"];
+			
+			purchaseDate = topPurchases[i]["purchase_date"];
+			purchaseDate = purchaseDate * 1000
+			purchaseDate = new Date(purchaseDate)
+			purchaseDate = purchaseDate.toLocaleString()
+			
+			shipData = topPurchases[i]["ship"];
+			  
+		  	shipName = shipData["ship_name"];
+		  	shipMinter = shipData["ship_minter"];
+			shipRating = shipData["ship_rating"];
+			shipTextureType = shipData["ship_texture_type"];
+			shipTotalStats = shipData["ship_total_stats"];
+		 	shipClass = shipData["ship_type"];
+			shipAttack = shipData["ship_stats"]["attack"];
+			shipSpecialAttack = shipData["ship_stats"]["special_attack"];
+			shipShields = shipData["ship_stats"]["shields"];
+			shipSpecialDefense = shipData["ship_stats"]["special_defense"];
+			shipSpeed = shipData["ship_stats"]["speed"];
+			shipMining = shipData["ship_stats"]["mining"];
+			shipLuck = shipData["ship_stats"]["luck"];
+			shipMaxHealth = shipData["ship_stats"]["max_health"];
+
+    shipRatingBuild = "";
+    for (let index = 0; index < shipRating; index++) {
+      shipRatingBuild = shipRatingBuild + "⭐"
+    }
+
+			  
+var row = table.insertRow();
+
+var cell1 = row.insertCell();
+var cell2 = row.insertCell();
+var cell3 = row.insertCell();
+var cell4 = row.insertCell();
+var cell5 = row.insertCell();
+var cell6 = row.insertCell();
+var cell7 = row.insertCell();
+var cell8 = row.insertCell();
+var cell9 = row.insertCell();
+var cell10 = row.insertCell();
+var cell11 = row.insertCell();
+var cell12 = row.insertCell();
+var cell13 = row.insertCell();
+var cell14 = row.insertCell();
+
+cell1.innerHTML = purchaseDate;
+cell2.innerHTML = "<a href=\"https://app.deepspace.game/shipLink/" + purchaseTokenId + "\">" + purchaseTokenId + "</a>";
+cell3.innerHTML = shipRatingBuild;
+cell4.innerHTML = shipTotalStats;
+cell5.innerHTML = purchasePrice;
+cell6.innerHTML = shipTextureType;
+cell7.innerHTML = shipAttack;
+cell8.innerHTML = shipSpecialAttack;
+cell9.innerHTML = shipShields;
+cell10.innerHTML = shipSpecialDefense;
+cell11.innerHTML = shipSpeed;
+cell12.innerHTML = shipLuck;
+cell13.innerHTML = shipMining;
+cell14.innerHTML = shipMaxHealth;
+			  
+}
+			
 			
 ////
 			
@@ -547,6 +657,8 @@ Mint/Buy/Sell/Trade Ships on the DEEPSPACE App at: <a href="https://app.deepspac
 <br><div id="topMintersList">Top Minters List: - N/A</div>
 <br><div id="topShipsListTitle">Top Ships List: - N/A</div>
 <table id="topShipsList"></table>
+<br><div id="topPurchasesTitle">Top Purchase List: - N/A</div>
+<table id="topPurchases"></table>
 <br><div id="recentPurchasesTitle">Recent Purchase List: - N/A</div>
 <table id="recentPurchases"></table>
 <br><div id="lastUpdated">Last Updated: N/A</div>
