@@ -377,58 +377,34 @@ row.appendChild(cell);
 		  lastUpdated = tokenData["last_updated"];
 		  document.getElementById('lastUpdated').innerHTML = "Last Updated: " + lastUpdated;
 		
+			
+////
+			
 		  recentPurchases = tokenData["recent_purchases"];
-		  document.getElementById('recentPurchases').innerHTML = "" + recentPurchases.length +  " Most Recent Purchased Ships:<br>";
+		  document.getElementById('recentPurchasesTitle').innerHTML = "" + recentPurchases.length +  " Most Recent Purchased Ships:<br>";
 
+var table = document.getElementById("recentPurchases");
 
-  // creates a <table> element and a <tbody> element
-  tbl = document.createElement("table");
-  tblBody = document.createElement("tbody");
-  
-    row = document.createElement("tr");
-    cell = document.createElement("td");
-    cellText = document.createTextNode("Purchase Id:");
-      cell.appendChild(cellText);
-row.appendChild(cell);
-			
-	cell = document.createElement("td");
-      cellText = document.createTextNode("Buyer:");
-      cell.appendChild(cellText);
-row.appendChild(cell);
-			
-    cell = document.createElement("td");    
-	cellText = document.createTextNode("Seller:");
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-		      
-    cell = document.createElement("td");    
-	cellText = document.createTextNode("Fee:");
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-			
-    cell = document.createElement("td");    
-	cellText = document.createTextNode("Price:");
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-			
-    cell = document.createElement("td");    
-	cellText = document.createTextNode("Token Address:");
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-			
-    cell = document.createElement("td");    
-	cellText = document.createTextNode("Token Id:");
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-			
-    cell = document.createElement("td");    
-	cellText = document.createTextNode("Purchase Date:");
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-	  	
-    // add the row to the end of the table body
-    tblBody.appendChild(row);
-  
+var rowH = table.insertRow();
+
+var cellH1 = rowH.insertCell();  
+var cellH2 = rowH.insertCell();
+var cellH3 = rowH.insertCell();
+var cellH4 = rowH.insertCell();
+var cellH5 = rowH.insertCell();
+var cellH6 = rowH.insertCell();
+var cellH7 = rowH.insertCell();
+var cellH8 = rowH.insertCell();
+ 
+cellH1.innerHTML = "Purchase Id:";
+cellH2.innerHTML = "Buyer:";
+cellH3.innerHTML = "Seller:";
+cellH4.innerHTML = "Fee:";
+cellH5.innerHTML = "Price:";
+cellH6.innerHTML = "Token Address:";
+cellH7.innerHTML = "Token Id:";
+cellH8.innerHTML = "Purchase Date:";
+		
 		  for (let i = 0; i < recentPurchases.length; i++) {
 		  	purchaseId = recentPurchases[i]["purchase_id"];
 		  	purchaseBuyer = recentPurchases[i]["buyer"];
@@ -438,61 +414,35 @@ row.appendChild(cell);
 			purchaseTokenAddress = recentPurchases[i]["token_address"];
 			purchaseTokenId = recentPurchases[i]["token_id"];
 			purchaseDate = recentPurchases[i]["purchase_date"];
-			 			
-    // creates a table row
-    row = document.createElement("tr");
+
+var row = table.insertRow();
+
+var cell1 = row.insertCell();
+var cell2 = row.insertCell();
+var cell3 = row.insertCell();
+var cell4 = row.insertCell();
+var cell5 = row.insertCell();
+var cell6 = row.insertCell();
+var cell7 = row.insertCell();
+var cell8 = row.insertCell();
+var cell9 = row.insertCell();
+var cell10 = row.insertCell();
+var cell11 = row.insertCell();
+var cell12 = row.insertCell();
+var cell13 = row.insertCell();
+var cell14 = row.insertCell();
+
+cell1.innerHTML = purchaseId;
+cell2.innerHTML = purchaseBuyer;
+cell3.innerHTML = purchaseSeller;
+cell4.innerHTML = purchaseFee;
+cell5.innerHTML = purchasePrice;
+cell6.innerHTML = purchaseTokenAddress;
+cell7.innerHTML = purchaseTokenId;
+cell8.innerHTML = purchaseDate;
 			  
-    cell = document.createElement("td");
-	 cellText = document.createTextNode(purchaseId);
-      cell.appendChild(cellText);
-row.appendChild(cell);
-			  
-    cell = document.createElement("td");
-      cellText = document.createTextNode(purchaseBuyer);
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-			  
-    cell = document.createElement("td");
-      cellText = document.createTextNode(purchaseSeller);
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-			  
-			  
-    cell = document.createElement("td");
-      cellText = document.createTextNode(purchaseFee);
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-			  
-    cell = document.createElement("td");
-      cellText = document.createTextNode(purchasePrice);
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-			  
-    cell = document.createElement("td");
-      cellText = document.createTextNode(purchaseTokenAddress);
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-			  
-    cell = document.createElement("td");
-      cellText = document.createTextNode(purchaseTokenId);
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-			  
-    cell = document.createElement("td");
-      cellText = document.createTextNode(purchaseDate);
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-		  			  
-    // add the row to the end of the table body
-    tblBody.appendChild(row);
-    }
-		
-  // put the <tbody> in the <table>
-  tbl.appendChild(tblBody);
-  // appends <table> into <body>
-  document.getElementById('recentPurchases').appendChild(tbl);
-  // sets the border attribute of tbl to 2;
-  tbl.setAttribute("border", "2");
+}
+			
 			
 		}
 	}
@@ -529,7 +479,8 @@ Mint/Buy/Sell/Trade Ships on the DEEPSPACE App at: <a href="https://app.deepspac
 <br><div id="topMintersList">Top Minters List: - N/A</div>
 <br><div id="topShipsListTitle">Top Ships List: - N/A</div>
 <table id="topShipsList"></table>
-<br><div id="recentPurchases">Recent Purchase List: - N/A</div>
+<br><div id="recentPurchasesTitle">Recent Purchase List: - N/A</div>
+<table id="recentPurchases"></table>
 <br><div id="lastUpdated">Last Updated: N/A</div>
 </body>
 </html>
