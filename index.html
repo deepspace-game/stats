@@ -377,8 +377,127 @@ row.appendChild(cell);
 		  lastUpdated = tokenData["last_updated"];
 		  document.getElementById('lastUpdated').innerHTML = "Last Updated: " + lastUpdated;
 
-		}
-	}
+
+			
+			
+			
+		  recentPurchases = tokenData["recent_purchases"];
+		  document.getElementById('recentPurchases').innerHTML = "" + recentPurchases.length +  " Most Recent Purchased Ships:<br>";
+
+
+  // creates a <table> element and a <tbody> element
+  tbl = document.createElement("table");
+  tblBody = document.createElement("tbody");
+  
+    row = document.createElement("tr");
+    cell = document.createElement("td");
+    cellText = document.createTextNode("Purchase Id:");
+      cell.appendChild(cellText);
+row.appendChild(cell);
+			
+	cell = document.createElement("td");
+      cellText = document.createTextNode("Buyer:");
+      cell.appendChild(cellText);
+row.appendChild(cell);
+			
+    cell = document.createElement("td");    
+	cellText = document.createTextNode("Seller:");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+		      
+    cell = document.createElement("td");    
+	cellText = document.createTextNode("Fee:");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			
+    cell = document.createElement("td");    
+	cellText = document.createTextNode("Price:");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			
+    cell = document.createElement("td");    
+	cellText = document.createTextNode("Token Address:");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			
+    cell = document.createElement("td");    
+	cellText = document.createTextNode("Token Id:");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			
+    cell = document.createElement("td");    
+	cellText = document.createTextNode("Purchase Date:");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+	  	
+    // add the row to the end of the table body
+    tblBody.appendChild(row);
+  
+		  for (let i = 0; i < recentPurchases.length; i++) {
+		  	purchaseId = recentPurchases[i]["purchase_id"];
+		  	purchaseBuyer = recentPurchases[i]["buyer"];
+			purchaseSeller = recentPurchases[i]["seller"];
+		 	purchaseFee = largeFormat(recentPurchases[i]["fee"]) + " DPS";
+			purchasePrice = largeFormat(recentPurchases[i]["price"]) + " DPS";
+			purchaseTokenAddress = recentPurchases[i]["token_address"];
+			purchaseTokenId = recentPurchases[i]["token_id"];
+			purchaseDate = recentPurchases[i]["purchase_date"]);
+			 			
+    // creates a table row
+    row = document.createElement("tr");
+			  
+    cell = document.createElement("td");
+	 cellText = document.createTextNode(purchaseId);
+      cell.appendChild(cellText);
+row.appendChild(cell);
+			  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(purchaseBuyer);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(purchaseSeller);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			  
+			  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(purchaseFee);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(purchasePrice);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(purchaseTokenAddress);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(purchaseTokenId);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(purchaseDate);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+		  			  
+    // add the row to the end of the table body
+    tblBody.appendChild(row);
+    }
+		
+  // put the <tbody> in the <table>
+  tbl.appendChild(tblBody);
+  // appends <table> into <body>
+  document.getElementById('recentPurchases').appendChild(tbl);
+  // sets the border attribute of tbl to 2;
+  tbl.setAttribute("border", "2");
+			
 </script>
 </head>
 <body>
@@ -411,6 +530,7 @@ Mint/Buy/Sell/Trade Ships on the DEEPSPACE App at: <a href="https://app.deepspac
 <br><div id="topMintersList">Top Minters List: - N/A</div>
 <br><div id="topShipsListTitle">Top Ships List: - N/A</div>
 <table id="topShipsList"></table>
+<br><div id="recentPurchases">Recent Purchase List: - N/A</div>
 <br><div id="lastUpdated">Last Updated: N/A</div>
 </body>
 </html>
