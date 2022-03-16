@@ -436,6 +436,7 @@ cellH14.innerHTML = "Max Health:";
 		  	shipName = shipData["ship_name"];
 		  	shipMinter = shipData["ship_minter"];
 			shipRating = shipData["ship_rating"];
+			shipTextureType = shipData["ship_texture_type"];
 			shipTotalStats = shipData["ship_total_stats"];
 		 	shipClass = shipData["ship_type"];
 			shipAttack = shipData["ship_stats"]["attack"];
@@ -476,7 +477,7 @@ cell2.innerHTML = "<a href=\"https://app.deepspace.game/shipLink/" + purchaseTok
 cell3.innerHTML = shipRatingBuild;
 cell4.innerHTML = shipTotalStats;
 cell5.innerHTML = purchasePrice;
-cell6.innerHTML = "";
+cell6.innerHTML = shipTextureType;
 cell7.innerHTML = shipAttack;
 cell8.innerHTML = shipSpecialAttack;
 cell9.innerHTML = shipShields;
