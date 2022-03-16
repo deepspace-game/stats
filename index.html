@@ -435,7 +435,7 @@ cellH14.innerHTML = "Max Health:";
 			  
 		  	shipName = shipData["ship_name"];
 		  	shipMinter = shipData["ship_minter"];
-			level = shipData["ship_rating"];
+			shipRating = shipData["ship_rating"];
 		 	shipClass = shipData["ship_type"];
 			shipAttack = shipData["ship_stats"]["attack"];
 			shipSpecialAttack = shipData["ship_stats"]["special_attack"];
@@ -445,7 +445,13 @@ cellH14.innerHTML = "Max Health:";
 			shipMining = shipData["ship_stats"]["mining"];
 			shipLuck = shipData["ship_stats"]["luck"];
 			shipMaxHealth = shipData["ship_stats"]["max_health"];
-			  
+
+    shipRatingBuild = "";
+    for (let index = 0; index < shipRating; index++) {
+      shipRatingBuild = shipRatingBuild + "⭐"
+      console.log("Adding Ship Rating: " + shipRatingBuild)
+    }
+
 			  
 var row = table.insertRow();
 
@@ -466,7 +472,7 @@ var cell14 = row.insertCell();
 
 cell1.innerHTML = purchaseDate;
 cell2.innerHTML = "<a href=\"https://app.deepspace.game/shipLink/" + purchaseTokenId + "\">" + purchaseTokenId + "</a>";
-cell3.innerHTML = level;
+cell3.innerHTML = shipRatingBuild;
 cell4.innerHTML = "";
 cell5.innerHTML = purchasePrice;
 cell6.innerHTML = "";
