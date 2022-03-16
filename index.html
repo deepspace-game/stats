@@ -373,10 +373,6 @@ row.appendChild(cell);
   document.getElementById('stakingPools').appendChild(tbl);
   // sets the border attribute of tbl to 2;
   tbl.setAttribute("border", "2");
-			
-		}
-	}
-	
 	
 		  lastUpdated = tokenData["last_updated"];
 		  document.getElementById('lastUpdated').innerHTML = "Last Updated: " + lastUpdated;
@@ -441,7 +437,7 @@ row.appendChild(cell);
 			purchasePrice = largeFormat(recentPurchases[i]["price"]) + " DPS";
 			purchaseTokenAddress = recentPurchases[i]["token_address"];
 			purchaseTokenId = recentPurchases[i]["token_id"];
-			purchaseDate = recentPurchases[i]["purchase_date"]);
+			purchaseDate = recentPurchases[i]["purchase_date"];
 			 			
     // creates a table row
     row = document.createElement("tr");
@@ -497,9 +493,6 @@ row.appendChild(cell);
   document.getElementById('recentPurchases').appendChild(tbl);
   // sets the border attribute of tbl to 2;
   tbl.setAttribute("border", "2");
-			
-		}
-	}
 			
 </script>
 </head>
