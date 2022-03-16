@@ -195,6 +195,12 @@ cellH14.innerHTML = "Max Health:";
 			shipLuck = topShipsList[i]["ship_stats"]["luck"];
 			shipMaxHealth = topShipsList[i]["ship_stats"]["max_health"];
 
+    shipRatingBuild = "";
+    for (let index = 0; index < shipRating; index++) {
+      shipRatingBuild = shipRatingBuild + "⭐"
+      console.log("Adding Ship Rating: " + shipRatingBuild)
+    }
+			  
 var row = table.insertRow();
 
 var cell1 = row.insertCell();  
@@ -217,7 +223,7 @@ cell1.innerHTML = y;
 cell2.innerHTML = "<a href=\"https://app.deepspace.game/shipLink/" + shipIdOnly + "\">" + shipIdOnly + "</a>";
 cell3.innerHTML = ownerId;
 cell4.innerHTML = shipClass;
-cell5.innerHTML = level;
+cell5.innerHTML = shipRatingBuild;
 cell6.innerHTML = statsTotal;
 cell7.innerHTML = shipAttack;
 cell8.innerHTML = shipShields;
