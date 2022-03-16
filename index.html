@@ -395,15 +395,27 @@ var cellH5 = rowH.insertCell();
 var cellH6 = rowH.insertCell();
 var cellH7 = rowH.insertCell();
 var cellH8 = rowH.insertCell();
+var cellH9 = rowH.insertCell();
+var cellH10 = rowH.insertCell();
+var cellH11 = rowH.insertCell();
+var cellH12 = rowH.insertCell();
+var cellH13 = rowH.insertCell();
+var cellH14 = rowH.insertCell();			
  
-cellH1.innerHTML = "Purchase Id:";
-cellH2.innerHTML = "Buyer:";
-cellH3.innerHTML = "Seller:";
-cellH4.innerHTML = "Fee:";
+cellH1.innerHTML = "Date:";
+cellH2.innerHTML = "Ship Id:";
+cellH3.innerHTML = "Rating:";
+cellH4.innerHTML = "Level:";
 cellH5.innerHTML = "Price:";
-cellH6.innerHTML = "Token Address:";
-cellH7.innerHTML = "Token Id:";
-cellH8.innerHTML = "Purchase Date:";
+cellH6.innerHTML = "Texture Rarity:";
+cellH7.innerHTML = "Attack:";
+cellH8.innerHTML = "Special Attack:";
+cellH9.innerHTML = "Shields:";
+cellH10.innerHTML = "Special Defense:";
+cellH11.innerHTML = "Speed:";
+cellH12.innerHTML = "Luck:";
+cellH13.innerHTML = "Mining:";
+cellH14.innerHTML = "Max Health:";
 		
 		  for (let i = 0; i < recentPurchases.length; i++) {
 		  	purchaseId = recentPurchases[i]["purchase_id"];
@@ -418,6 +430,22 @@ cellH8.innerHTML = "Purchase Date:";
 			purchaseDate = purchaseDate * 1000
 			purchaseDate = new Date(purchaseDate)
 			purchaseDate = purchaseDate.toLocaleString()
+			
+			shipData = recentPurchases[i]["ship"];
+			  
+		  	shipName = shipData["ship_name"];
+		  	shipMinter = shipData["ship_minter"];
+			level = shipData["ship_rating"];
+		 	shipClass = shipData["ship_type"];
+			shipAttack = shipData["ship_stats"]["attack"];
+			shipSpecialAttack = shipData["ship_stats"]["special_attack"];
+			shipShields = shipData["ship_stats"]["shields"];
+			shipSpecialDefense = shipData["ship_stats"]["special_defense"];
+			shipSpeed = shipData["ship_stats"]["speed"];
+			shipMining = shipData["ship_stats"]["mining"];
+			shipLuck = shipData["ship_stats"]["luck"];
+			shipMaxHealth = shipData["ship_stats"]["max_health"];
+			  
 			  
 var row = table.insertRow();
 
@@ -429,15 +457,27 @@ var cell5 = row.insertCell();
 var cell6 = row.insertCell();
 var cell7 = row.insertCell();
 var cell8 = row.insertCell();
+var cell9 = row.insertCell();
+var cell10 = row.insertCell();
+var cell11 = row.insertCell();
+var cell12 = row.insertCell();
+var cell13 = row.insertCell();
+var cell14 = row.insertCell();
 
-cell1.innerHTML = purchaseId;
-cell2.innerHTML = "<a href=\"https://bscscan.com/token/0xf275e1AC303a4C9D987a2c48b8E555A77FeC3F1C?a=" + purchaseBuyer + "\">" + purchaseBuyer + "</a>";
-cell3.innerHTML = "<a href=\"https://bscscan.com/token/0xf275e1AC303a4C9D987a2c48b8E555A77FeC3F1C?a=" + purchaseSeller + "\">" + purchaseSeller + "</a>";
-cell4.innerHTML = purchaseFee;
+cell1.innerHTML = purchaseDate;
+cell2.innerHTML = "<a href=\"https://app.deepspace.game/shipLink/" + purchaseTokenId + "\">" + purchaseTokenId + "</a>";
+cell3.innerHTML = level;
+cell4.innerHTML = "";
 cell5.innerHTML = purchasePrice;
-cell6.innerHTML = purchaseTokenAddress;
-cell7.innerHTML = "<a href=\"https://app.deepspace.game/shipLink/" + purchaseTokenId + "\">" + purchaseTokenId + "</a>";
-cell8.innerHTML = purchaseDate;
+cell6.innerHTML = "";
+cell7.innerHTML = shipAttack;
+cell8.innerHTML = shipSpecialAttack;
+cell9.innerHTML = shipShields;
+cell10.innerHTML = shipSpecialDefense;
+cell11.innerHTML = shipSpeed;
+cell12.innerHTML = shipLuck;
+cell13.innerHTML = shipMining;
+cell14.innerHTML = shipMaxHealth;
 			  
 }
 			
