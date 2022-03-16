@@ -413,9 +413,11 @@ cellH8.innerHTML = "Purchase Date:";
 			purchasePrice = largeFormat(recentPurchases[i]["price"]) + " DPS";
 			purchaseTokenAddress = recentPurchases[i]["token_address"];
 			purchaseTokenId = recentPurchases[i]["token_id"];
+			
 			purchaseDate = recentPurchases[i]["purchase_date"];
-			purchaseDate = purchaseDate.toDateString();
-			  //.toLocaleString()
+			purchaseDate = purchaseDate * 1000
+			purchaseDate = new Date(purchaseDate)
+			purchaseDate = purchaseDate.toLocaleString()
 			  
 var row = table.insertRow();
 
