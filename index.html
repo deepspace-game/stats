@@ -374,13 +374,13 @@ row.appendChild(cell);
   // sets the border attribute of tbl to 2;
   tbl.setAttribute("border", "2");
 			
+		}
+	}
+	
+	
 		  lastUpdated = tokenData["last_updated"];
 		  document.getElementById('lastUpdated').innerHTML = "Last Updated: " + lastUpdated;
-
-
-			
-			
-			
+		
 		  recentPurchases = tokenData["recent_purchases"];
 		  document.getElementById('recentPurchases').innerHTML = "" + recentPurchases.length +  " Most Recent Purchased Ships:<br>";
 
@@ -497,6 +497,9 @@ row.appendChild(cell);
   document.getElementById('recentPurchases').appendChild(tbl);
   // sets the border attribute of tbl to 2;
   tbl.setAttribute("border", "2");
+			
+		}
+	}
 			
 </script>
 </head>
