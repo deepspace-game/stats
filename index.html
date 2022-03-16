@@ -414,7 +414,7 @@ cellH8.innerHTML = "Purchase Date:";
 			purchaseTokenAddress = recentPurchases[i]["token_address"];
 			purchaseTokenId = recentPurchases[i]["token_id"];
 			purchaseDate = recentPurchases[i]["purchase_date"];  
-			purchaseDate = new Date(purchaseDate * 1).toUTCString();
+			purchaseDate = new Date(purchaseDate).toLocaleString();
 			  
 var row = table.insertRow();
 
