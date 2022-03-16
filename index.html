@@ -161,6 +161,7 @@ var cellH11 = rowH.insertCell();
 var cellH12 = rowH.insertCell();
 var cellH13 = rowH.insertCell();
 var cellH14 = rowH.insertCell();
+var cellH15 = rowH.insertCell();
  
 cellH1.innerHTML = "Position:";
 cellH2.innerHTML = "Ship Address:";
@@ -168,14 +169,15 @@ cellH3.innerHTML = "Owner Address:";
 cellH4.innerHTML = "Ship Class:";
 cellH5.innerHTML = "Ship Rating:";
 cellH6.innerHTML = "Ship Total Stats:";
-cellH7.innerHTML = "Attack:";
-cellH8.innerHTML = "Shields:";
-cellH9.innerHTML = "Speed:";
-cellH10.innerHTML = "Mining:";
-cellH11.innerHTML = "Luck:";
-cellH12.innerHTML = "Special Attack:";
-cellH13.innerHTML = "Special Defense:";
-cellH14.innerHTML = "Max Health:";  
+cellH7.innerHTML = "Texture Rarity:";
+cellH8.innerHTML = "Attack:";
+cellH9.innerHTML = "Shields:";
+cellH10.innerHTML = "Speed:";
+cellH11.innerHTML = "Mining:";
+cellH12.innerHTML = "Luck:";
+cellH13.innerHTML = "Special Attack:";
+cellH14.innerHTML = "Special Defense:";
+cellH15.innerHTML = "Max Health:";  
 		
   var y = 0;
 		  for (let i = 0; i < topShipsList.length; i++) {
@@ -184,6 +186,7 @@ cellH14.innerHTML = "Max Health:";
 			shipIdOnly = shipId.split('-')[1]
 		  	ownerId = topShipsList[i]["ship_owner_id"];
 			level = topShipsList[i]["ship_rating"];
+			shipTextureType = topShipsList[i]["ship_texture_type"];
 		 	shipClass = topShipsList[i]["ship_class"];
 			statsTotal = topShipsList[i]["ship_stats_total"];
 			shipAttack = topShipsList[i]["ship_stats"]["attack"];
@@ -217,6 +220,7 @@ var cell11 = row.insertCell();
 var cell12 = row.insertCell();
 var cell13 = row.insertCell();
 var cell14 = row.insertCell();
+var cell15 = row.insertCell();
 
 
 cell1.innerHTML = y;
@@ -225,14 +229,15 @@ cell3.innerHTML = ownerId;
 cell4.innerHTML = shipClass;
 cell5.innerHTML = shipRatingBuild;
 cell6.innerHTML = statsTotal;
-cell7.innerHTML = shipAttack;
-cell8.innerHTML = shipShields;
-cell9.innerHTML = shipSpeed;
-cell10.innerHTML = shipMining;
-cell11.innerHTML = shipLuck;
-cell12.innerHTML = shipSpecialAttack;
-cell13.innerHTML = shipSpecialDefense;
-cell14.innerHTML = shipMaxHealth;  
+cell7.innerHTML = shipTextureType;
+cell8.innerHTML = shipAttack;
+cell9.innerHTML = shipShields;
+cell10.innerHTML = shipSpeed;
+cell11.innerHTML = shipMining;
+cell12.innerHTML = shipLuck;
+cell13.innerHTML = shipSpecialAttack;
+cell14.innerHTML = shipSpecialDefense;
+cell15.innerHTML = shipMaxHealth;  
 	
 
 			  
