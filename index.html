@@ -427,8 +427,8 @@ var cell7 = row.insertCell();
 var cell8 = row.insertCell();
 
 cell1.innerHTML = purchaseId;
-cell2.innerHTML = purchaseBuyer;
-cell3.innerHTML = purchaseSeller;
+cell2.innerHTML = "<a href=\"https://bscscan.com/token/0xf275e1AC303a4C9D987a2c48b8E555A77FeC3F1C?a=" + purchaseBuyer + "\">" + purchaseBuyer + "</a>";
+cell3.innerHTML = "<a href=\"https://bscscan.com/token/0xf275e1AC303a4C9D987a2c48b8E555A77FeC3F1C?a=" + purchaseSeller + "\">" + purchaseSeller + "</a>";
 cell4.innerHTML = purchaseFee;
 cell5.innerHTML = purchasePrice;
 cell6.innerHTML = purchaseTokenAddress;
