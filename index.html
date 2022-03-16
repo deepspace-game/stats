@@ -201,7 +201,6 @@ cellH15.innerHTML = "Max Health:";
     shipRatingBuild = "";
     for (let index = 0; index < shipRating; index++) {
       shipRatingBuild = shipRatingBuild + "⭐"
-      console.log("Adding Ship Rating: " + shipRatingBuild)
     }
 			  
 var row = table.insertRow();
@@ -321,7 +320,17 @@ row.appendChild(cell);
 			poolNumShips = largeFormat(stakingPools[i]["pool_num_ships"]);
 			poolAllocPoint = stakingPools[i]["pool_alloc_point"];
 			poolDepositEnabled = stakingPools[i]["pool_deposit_enabled"];
-			 			
+
+    poolMinStarsBuild = "";
+    for (let index = 0; index < poolMinStars; index++) {
+      poolMinStarsBuild = poolMinStarsBuild + "⭐"
+    }
+			  
+    poolMaxStarsBuild = "";
+    for (let index = 0; index < poolMaxStars; index++) {
+      poolMaxStarsBuild = poolMaxStarsBuild + "⭐"
+    }
+			  
     // creates a table row
     row = document.createElement("tr");
 			  
@@ -331,12 +340,12 @@ row.appendChild(cell);
 row.appendChild(cell);
 			  
     cell = document.createElement("td");
-      cellText = document.createTextNode(poolMinStars);
+      cellText = document.createTextNode(poolMinStarsBuild);
       cell.appendChild(cellText);
       row.appendChild(cell);
 			  
     cell = document.createElement("td");
-      cellText = document.createTextNode(poolMaxStars);
+      cellText = document.createTextNode(poolMaxStarsBuild);
       cell.appendChild(cellText);
       row.appendChild(cell);
 			  
@@ -465,7 +474,6 @@ cellH14.innerHTML = "Max Health:";
     shipRatingBuild = "";
     for (let index = 0; index < shipRating; index++) {
       shipRatingBuild = shipRatingBuild + "⭐"
-      console.log("Adding Ship Rating: " + shipRatingBuild)
     }
 
 			  
