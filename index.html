@@ -33,6 +33,7 @@ table, th, td {
 	var stakingPools = "";
 	var totalShipsStaked = "";
 	var circulatingSupply = "";
+	var totalSupply = "";
 	
 	largeFormat = d3.format(",.0f");
 	largeFormatDecimal = d3.format(",.2f");
@@ -60,7 +61,7 @@ table, th, td {
 		  document.getElementById('shipLevel5').innerHTML = "Ship Rating 5 Mints: " + largeFormat(shipLevel5);
       
   		totalSupply = tokenData["total_supply"];
-		  document.getElementById('totalSupply').innerHTML = "Total Ships Built: " + largeFormat(totalSupply);
+		  document.getElementById('totalSupply').innerHTML = "Total Supply: " + largeFormat(totalSupply);
 			
   		maxSupply = tokenData["maximum_supply"];
 		  document.getElementById('maxSupply').innerHTML = "Total Ships Built: " + largeFormat(maxSupply);
