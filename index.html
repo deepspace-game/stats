@@ -59,8 +59,11 @@ table, th, td {
   	  shipLevel5 = tokenData["ship_rating_5_minted"];
 		  document.getElementById('shipLevel5').innerHTML = "Ship Rating 5 Mints: " + largeFormat(shipLevel5);
       
-  		totalShips = tokenData["total_ships_minted"];
-		  document.getElementById('totalShips').innerHTML = "Total Ships Built: " + largeFormat(totalShips);
+  		totalSupply = tokenData["total_supply"];
+		  document.getElementById('totalSupply').innerHTML = "Total Ships Built: " + largeFormat(totalSupply);
+			
+  		maxSupply = tokenData["maximum_supply"];
+		  document.getElementById('maxSupply').innerHTML = "Total Ships Built: " + largeFormat(maxSupply);
 			
   		shipsLost = tokenData["ships_lost"];
 		  document.getElementById('shipsLost').innerHTML = "Ships Lost: " + largeFormat(shipsLost);
@@ -741,10 +744,11 @@ Mint/Buy/Sell/Trade Ships on the DEEPSPACE App at: <a href="https://app.deepspac
 <p><i>Tip: Check the console log for the full JSON response from the token stat server</i></p>
 <p>Pro Tip: DEEPSPACE (DPS) Ships NFTs API Endpoint: <a href="https://stats.deepspace.game/api">https://stats.deepspace.game/api</a></p>
 <br/>
-<br><div id="totalShips">Total Ships Built: N/A</div>
+<br><div id="maxSupply">Total Ships Built: N/A</div>
 <br><div id="shipsLost">Ships Lost: N/A</div>
 <br><div id="totalShipsStaked">Total Ships Staked: N/A</div>
 <br><div id="circulatingSupply">Circulating Supply: N/A</div>
+<br><div id="totalSupply">Total Supply: N/A</div>
 <br><div id="shipLevel1">Ship Rating 1 Mints: N/A</div>
 <br><div id="shipLevel2">Ship Rating 2 Mints: N/A</div>
 <br><div id="shipLevel3">Ship Rating 3 Mints: N/A</div>
